@@ -89,14 +89,14 @@ const BlogIndex = ({
           <li>
             {!isFirst && (
               <Link to={prevPage} rel="prev">
-                ← Previous Page
+                ← Anterior
               </Link>
             )}
           </li>
           <li>
             {!isLast && (
               <Link to={nextPage} rel="next">
-                Next Page →
+                Próxima →
               </Link>
             )}
           </li>
