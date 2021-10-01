@@ -12,7 +12,12 @@ type PageContext = {
 type Data = {
   site: {
     siteMetadata: {
-      title: string
+      title: string,
+      author: {
+        name: string,
+        summary: string,
+        bio: string
+      }
     }
   }
   allMarkdownRemark: {
@@ -38,6 +43,7 @@ const BlogIndex = ({
   pageContext,
 }: PageProps<Data, PageContext>) => {
   const siteTitle = data.site.siteMetadata.title
+  const siteAuthor = data.site.siteMetadata.author
   const posts = data.allMarkdownRemark.edges
   const { currentPage, numPages } = pageContext
 
@@ -47,7 +53,7 @@ const BlogIndex = ({
   const nextPage = `/${currentPage + 1}`
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} author={siteAuthor}>
       <SEO title="All posts" />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
@@ -113,6 +119,11 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author {
+          name
+          summary
+          bio
+        }
       }
     }
     allMarkdownRemark(

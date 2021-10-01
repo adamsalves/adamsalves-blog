@@ -6,7 +6,8 @@ import { scale } from "../utils/typography"
 import Footer from "./footer"
 import "./global.css"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, author, children }) => {
+  console.log(author)
   const toggle = (
     <ThemeToggler>
       {({ toggleTheme, theme }) => {
@@ -77,6 +78,7 @@ const Layout = ({ location, title, children }) => {
           {title}
         </Link>
       </h2>
+      { author && author.bio }
     </>
   )
 
