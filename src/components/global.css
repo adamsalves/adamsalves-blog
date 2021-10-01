@@ -73,7 +73,7 @@ button {
   outline: 0;
 }
 .sidebar {
-  height: 200px;
+  height: 230px;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -86,7 +86,7 @@ button {
 
 .main-content {
   background-color: var(--bg);
-  position: absolute;
+  /* position: absolute; */
   top: 200px;
   z-index: 10;
   padding: 0 20px 0;
