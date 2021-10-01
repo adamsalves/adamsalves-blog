@@ -1,15 +1,16 @@
 module.exports = {
-  pathPrefix: "/leonids",
+  pathPrefix: "/adamsalves",
   siteMetadata: {
-    title: `Leonids`,
+    title: `Adams Alves`,
     author: {
-      name: `@ry_zou`,
-      summary: `web dev`,
+      name: `@adamsalves`,
+      summary: `Desenvolvedor Front-End`,
+      bio: 'Trabalho com Desenvolvimento Web e Front-End em projetos que usam Javascript (ES6+) e Vue.js.',
     },
-    description: `A simple, fixed sidebar two columns Gatsby.js blog starter.`,
-    siteUrl: `https://renyuanz.github.io/leonids`,
+    description: `Adams Alves - Desenvolvimento Web e Front End em São Paulo/SP.`,
+    siteUrl: `https://adamsalves.com.br/`,
     social: {
-      twitter: `ry_zou`,
+      github: `adamsalves`,
     },
     defaultImage: "images/bg.jpeg",
   },
@@ -62,13 +63,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Ryz`,
-        short_name: `Ryz`,
+        name: `Adams Alves - Dev. Front-end`,
+        short_name: `Adams Alves`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#131313`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/a-icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
