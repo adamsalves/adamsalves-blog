@@ -10,6 +10,7 @@ import "./global.css"
 
 const Layout = ({ location, title, author, children }) => {
   console.log(title)
+  console.log(window.matchMedia('(max-width: 752px)').matches)
   const data = useStaticQuery(graphql`
     query PhotoQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
@@ -114,13 +115,6 @@ const Layout = ({ location, title, author, children }) => {
         >
           { author && author.summary }
         </p>
-        <p
-        style={{
-          marginBottom: 0
-        }}
-        >
-          { author && author.bio }
-        </p>
       </div> 
     </>
   )
@@ -134,10 +128,7 @@ const Layout = ({ location, title, author, children }) => {
         minHeight: "100vh",
       }}
     >
-      <div
-        className="sidebar"
-        style={ title !== 'Home' ? { height: 370 } : { height: 200 } }
-      >
+      <div className="sidebar">
         <div
           className="md:h-screen p-4 flex flex-col justify-center items-center"
           style={{ minHeight: 200 }}
@@ -146,10 +137,7 @@ const Layout = ({ location, title, author, children }) => {
         </div>
       </div>
 
-      <div
-        className="main-content relative"
-        style={ title !== 'Home' ? { top: 340 } : { top: 180 } }
-      >
+      <div className="main-content relative">
         <main>{children}</main>
         <Footer />
       </div>
