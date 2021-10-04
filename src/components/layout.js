@@ -9,8 +9,6 @@ import Footer from "./footer"
 import "./global.css"
 
 const Layout = ({ location, title, author, children }) => {
-  console.log(title)
-  console.log(window.matchMedia('(max-width: 752px)').matches)
   const data = useStaticQuery(graphql`
     query PhotoQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
