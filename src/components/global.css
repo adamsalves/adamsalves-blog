@@ -83,7 +83,7 @@ button {
   z-index: 1;
   top: 0;
   left: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   text-align: center;
   background-color: var(--lightBg);
 }
