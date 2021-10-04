@@ -30,7 +30,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             style={{
               ...scale(-1 / 5),
               display: `block`,
+              marginTop: rhythm(.5),
+              marginBottom: rhythm(.5),
+              lineHeight: 1.5,
+            }}
+            >{post.frontmatter.description}</p>
+          <p
+            style={{
+              ...scale(-1 / 5),
+              display: `block`,
               marginBottom: rhythm(1),
+              fontWeight: 100
             }}
           >
             {post.frontmatter.date}
