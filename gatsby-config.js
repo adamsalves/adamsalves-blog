@@ -4,7 +4,7 @@ module.exports = {
     title: `Adams Alves`,
     author: {
       name: `@adamsalves`,
-      summary: `Desenvolvedor Front-End`,
+      summary: `Front-End Developer`,
       bio: 'Trabalho com Desenvolvimento Web e Front-End em projetos que usam Javascript (ES6+) e Vue.js.',
     },
     description: `Adams Alves - Desenvolvimento Web e Front End em São Paulo/SP.`,

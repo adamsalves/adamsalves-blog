@@ -2,12 +2,25 @@ import React from "react"
 import { Link } from "gatsby"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import { scale } from "../utils/typography"
+import { useStaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
 
 import Footer from "./footer"
 import "./global.css"
 
 const Layout = ({ location, title, author, children }) => {
-  console.log(author)
+  const data = useStaticQuery(graphql`
+    query PhotoQuery {
+      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+        childImageSharp {
+          fixed(width: 100, height: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
   const toggle = (
     <ThemeToggler>
       {({ toggleTheme, theme }) => {
@@ -60,6 +73,19 @@ const Layout = ({ location, title, author, children }) => {
   const header = (
     <>
       {toggle}
+      {author && <Image
+        fixed={data.avatar.childImageSharp.fixed}
+        alt={author.name}
+        style={{
+          marginTop: 10,
+          marginBottom: 0,
+          minWidth: 50,
+          borderRadius: `100%`,
+        }}
+        imgStyle={{
+          borderRadius: `50%`,
+        }}
+      />}
       <h2
         style={{
           ...scale(1),
@@ -78,7 +104,16 @@ const Layout = ({ location, title, author, children }) => {
           {title}
         </Link>
       </h2>
-      { author && author.bio }
+      <div>
+        <p
+        style={{
+          marginBottom: 10,
+          fontWeight: 600
+        }}
+        >
+          { author && author.summary }
+        </p>
+      </div> 
     </>
   )
 
