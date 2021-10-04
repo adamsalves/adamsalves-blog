@@ -13,7 +13,7 @@ const Layout = ({ location, title, author, children }) => {
     query PhotoQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 100, height: 100) {
+          fixed(width: 80, height: 80) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -77,9 +77,9 @@ const Layout = ({ location, title, author, children }) => {
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
         style={{
-          marginTop: 10,
+          marginTop: 5,
           marginBottom: 0,
-          minWidth: 50,
+          minWidth: 40,
           borderRadius: `100%`,
         }}
         imgStyle={{
@@ -88,7 +88,7 @@ const Layout = ({ location, title, author, children }) => {
       />}
       <h2
         style={{
-          ...scale(1),
+          ...scale(.9),
           marginBottom: 0,
           marginTop: 0,
           fontFamily: `Montserrat, sans-serif`,
@@ -107,11 +107,21 @@ const Layout = ({ location, title, author, children }) => {
       <div>
         <p
         style={{
-          marginBottom: 10,
-          fontWeight: 600
+          marginBottom: 5,
+          fontWeight: 600,
+          fontSize: 15
         }}
         >
           { author && author.summary }
+        </p>
+        <p
+        style={{
+          marginBottom: 5,
+          fontSize: 12,
+          lineHeight: 1.5
+        }}
+        >
+          { author && author.bio }
         </p>
       </div> 
     </>
